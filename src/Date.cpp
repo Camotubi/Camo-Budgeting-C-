@@ -12,9 +12,11 @@ void Date::setNow()
 {
     time_t t = time(0);   // get time now
     struct tm * now = localtime( & t );
-    day = now->tm_mday;
-    month = now->tm_mon;
-    year = now->tm_year;
+    this->day = now->tm_mday;
+    this->month = (now->tm_mon+1);
+    this->year = now->tm_year+1900;
+
+    
 }
 void Date::setDay(int day)
 {
@@ -46,11 +48,13 @@ int Date::getYear()
 {
     return year;
 }
+
 std::string Date::getDateString(std::string separator)
 {
     std::stringstream stream;
     std::string formatedDate;
-    stream << day << separator << month << year;
-    stream >> formatedDate;
+    
+    //stream << day << separator << this->month << separator << this->year;
+    formatedDate = std::to_string(day);
     return formatedDate;
 }
