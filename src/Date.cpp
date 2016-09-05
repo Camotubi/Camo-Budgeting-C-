@@ -54,7 +54,7 @@ std::string Date::getDateString(std::string separator)
     std::stringstream stream;
     std::string formatedDate;
     
-    //stream << day << separator << this->month << separator << this->year;
-    formatedDate = std::to_string(day);
+    stream << day << separator << this->month << separator << this->year;
+    stream >> formatedDate;
     return formatedDate;
 }

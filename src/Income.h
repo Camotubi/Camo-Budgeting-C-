@@ -7,7 +7,7 @@
 class Income
 {
 private:
-    float amount;
+    float amount = 0;
     Date date;
 public:
     Income();

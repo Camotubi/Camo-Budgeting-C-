@@ -2,8 +2,6 @@
 
 Income::Income()
 {
-
-
 }
 
 Income::~Income()
